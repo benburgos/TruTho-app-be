@@ -15,9 +15,11 @@ app.use(logger('dev'));
 app.use(express.json());
 
 // Routes ////////////////////////////////////////////////////////////////
-app.get('/', (req, res) => {
-  res.send(`You're at the index!`);
-});
+// Index Redirect /////
+const indexRouter = require('./routes/index')
+app.use('/', indexRouter)
+
+// Board Routers //////
 
 // Listener //////////////////////////////////////////////////////////////
 app.listen(PORT, () => console.log(`You're listening on port ${PORT}!`));
