@@ -20,7 +20,7 @@ const indexRouter = require('./routes/index');
 app.use('/', indexRouter);
 // Board Routers //////
 const boardRouter = require('./routes/boards');
-app.use('/', boardRouter);
+app.use('/boards', boardRouter);
 
 // Listener //////////////////////////////////////////////////////////////
 app.listen(PORT, () => console.log(`You're listening on port ${PORT}!`));
