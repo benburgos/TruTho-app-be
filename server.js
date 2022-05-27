@@ -18,6 +18,8 @@ app.use(express.json());
 // Index Redirect /////
 const indexRouter = require('./routes/index');
 app.use('/', indexRouter);
+const boardRouter = require('./routes/boards');
+app.use('/', boardRouter);
 
 // Board Routers //////
 

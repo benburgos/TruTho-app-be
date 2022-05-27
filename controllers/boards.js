@@ -1,5 +1,12 @@
-const Board = require('./models/Board');
-//  use this https://github.com/benburgos/Async-Await-Dogs/blob/main/controllers/dogs.js
+const Board = require('../models/Board');
+
+module.exports = {
+  create,
+  show,
+  index,
+  update,
+  delete: deleteBoard,
+};
 
 // Main/Index Route Function /////////////////////////////////////////////
 async function index(req, res) {
@@ -47,11 +54,3 @@ async function show(req, res) {
     res.status(400).json(error);
   }
 }
-
-module.exports = {
-  create,
-  show,
-  index,
-  update,
-  delete: deleteBoard,
-};
