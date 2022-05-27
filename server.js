@@ -1,6 +1,6 @@
 // Dependencies //////////////////////////////////////////////////////////
 require('dotenv').config();
-const { PORT = 3000, DATABASE_URL } = process.env;
+const { PORT = 3001, DATABASE_URL } = process.env;
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -24,6 +24,9 @@ app.use(logger('dev'));
 app.use(express.json());
 
 // Routes ////////////////////////////////////////////////////////////////
+app.get('/', (req, res) => {
+  res.send(`You're at the index!`)
+})
 
 // Listener //////////////////////////////////////////////////////////////
 app.listen(PORT, () => console.log(`You're listening on port ${PORT}!`));
