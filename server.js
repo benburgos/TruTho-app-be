@@ -20,13 +20,6 @@ const indexRouter = require('./routes/index');
 app.use('/', indexRouter);
 
 // Board Routers //////
-const Board = require('./models/Board');
-app.post('/boards', async (req, res) => {
-  try {
-    res.json(await Board.create(req.body));
-  } catch (error) {
-    res.status(400).json(error);
-  }
-});
+
 // Listener //////////////////////////////////////////////////////////////
 app.listen(PORT, () => console.log(`You're listening on port ${PORT}!`));
