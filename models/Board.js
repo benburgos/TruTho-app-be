@@ -8,11 +8,11 @@ const boardSchema = new Schema(
       {
         type: new Schema(
           {
-            listTitle: { type: String, required: true },
+            listTitle: String,
             listCards: [
               {
                 type: new Schema({
-                  cardComment: { type: String, required: true },
+                  cardComment: String,
                 }),
               },
             ],
