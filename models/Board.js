@@ -6,28 +6,24 @@ const boardSchema = new Schema(
     boardTitle: { type: String, required: true },
     list: [
       {
-        listTitle: 'Not Started',
-        listCards: [
+        type: new Schema(
           {
-            cardComment: 'This Project',
+            listTitle: { type: String, required: true },
+            listCards: [
+              {
+                type: new Schema({
+                  cardComment: { type: String, required: true },
+                }),
+              },
+            ],
           },
-        ],
-      },
-      {
-        listTitle: 'In Progress',
-        listCards: [
           {
-            cardComment: 'Last Project',
-          },
-        ],
-      },
-      {
-        listTitle: 'Closed',
-        listCards: [
-          {
-            cardComment: 'Not This Project',
-          },
-        ],
+            timestamps: {
+              createdAt: true,
+              updatedAt: true,
+            },
+          }
+        ),
       },
     ],
   },
